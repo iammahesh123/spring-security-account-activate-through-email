@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Verify Email</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .verification-card {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: center;
+        }
+        .verification-card h2 {
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="verification-card">
+        <h2>Verify Email</h2>
+        <div th:if="${message}" class="alert" th:classappend="${message == 'Your account has been verified successfully.' ? 'alert-success' : 'alert-danger'}">
+            <span th:text="${message}"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
